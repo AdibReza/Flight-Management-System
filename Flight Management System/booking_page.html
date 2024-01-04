@@ -1,0 +1,152 @@
+<?php
+$activePage = 'flight_details'; // Set this variable for each page
+include 'topbar.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Reservation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Adjusting to a column layout */
+            align-items: center; /* Centering horizontally */
+            justify-content: center; /* Centering vertically */
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('911.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+        }
+        .header {
+            margin-top: 20px; /* Add some top margin */
+            text-align: center; /* Center align the title */
+            color: white; /* Set the title color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a text shadow for better visibility */
+        }
+        form {
+            display: flex;
+            flex-direction: column; /* Display options in a column */
+            align-items: center; /* Center align form elements */
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8); /* Add a background color with transparency */
+            width: 400px; /* Set a fixed width for the form */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+        .form-row {
+            margin-bottom: 15px; /* Add space between rows */
+            display: flex;
+            flex-direction: row; /* Display elements in a row */
+            align-items: center; /* Align items vertically */
+            justify-content: space-between; /* Space elements evenly in a row */
+            width: 100%;
+        }
+        label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        input, select {
+            width: 200px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        label, input[type="radio"] {
+            display: inline-block;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .login-button {
+            position: absolute;
+            top: 20px; /* Adjust the distance from the top */
+            right: 40px; /* Adjust the distance from the right */
+            padding: 5px 10px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .login-button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Flight Reservation System</h1>
+    </div>
+        <a href="login_html.php" class="login-button">Login</a>
+    </div>
+    <form action="search_flights.php" method="get">
+        <div class="form-row">
+            <label><input type="radio" name="tripType" value="oneway" checked> One-Way</label>
+            <label><input type="radio" name="tripType" value="roundtrip"> Round Trip</label>
+        </div>
+        <div class="form-row">
+            <label for="from">From:</label>
+            <input type="text" name="from" id="from" required>
+        </div>
+        <div class="form-row">
+            <label for="to">To:</label>
+            <input type="text" name="to" id="to" required>
+        </div>
+        <div class="form-row">
+            <label for="departure">Departure:</label>
+            <input type="date" name="departure" id="departure" required>
+        </div>
+
+        <div class="form-row">
+            <label for="arrival">Arrival:</label>
+            <input type="date" name="arrival" id="arrival" disabled>
+        </div>
+        <button type="submit">Search Flights</button>
+    </form>
+    <script>
+        const tripTypeRadio = document.querySelectorAll('input[name="tripType"]');
+        const arrivalInput = document.getElementById('arrival');
+
+        tripTypeRadio.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'roundtrip') {
+                    arrivalInput.disabled = false;
+                } else {
+                    arrivalInput.disabled = true;
+                }
+            });
+        });
+
+        document.querySelector('form').addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+            
+            // Get the values from the form
+            const fromValue = document.getElementById('from').value;
+            const toValue = document.getElementById('to').value;
+            const departureValue = document.getElementById('departure').value;
+
+            // Construct the URL with parameters
+            const url = `search_flights.php?from=${encodeURIComponent(fromValue)}&to=${encodeURIComponent(toValue)}&departure=${encodeURIComponent(departureValue)}`;
+            
+            // Redirect to the constructed URL
+            window.location.href = url;
+        });
+    </script>
+</body>
+</html>

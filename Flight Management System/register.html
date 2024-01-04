@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Booking Form</title>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .prothom {
+            padding: 50px;
+        }
+        .form-group {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .form-group h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333333;
+        }
+        #input-group {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .btn-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn-greenish {
+            background-color: #6AC259;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .btn-greenish:hover {
+            background-color: #5a9c4b;
+        }
+        .btn-redish {
+            background-color: #e74c3c;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .btn-redish:hover {
+            background-color: #c73c2a;
+        }
+    </style>
+</head>
+<body>
+    <section class="prothom">
+        <div class="container"><!--container-->
+
+            <form class="form-group" action="register.php" method="post"><!--form-->
+                <h1 class="text-center text-black">Register</h1>
+
+                <div id="form"><!--form-->
+                    <div id="input"><!--input-->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="input-group" placeholder="User ID" name="id" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="password" id="input-group" placeholder="Password" name="pass" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" id="input-group" placeholder="Name" name="Name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" id="input-group" placeholder="Email" name="Email" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" id="input-group" placeholder="Phone" name="Phone" style="height: 40px;">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="btn-wrapper">
+                        <button type="submit" class="btn-greenish">Register</button>
+                        <button type="reset" class="btn-redish">Clear Form</button>
+                    </div>
+                </div><!--form-->
+
+            </form><!--form-->
+
+        </div><!--container-->
+    </section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Options</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .admin-container {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .button-link {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background-color 0.2s ease-in-out;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Options</h1>
+        <div class="button-container">
+            <a href="airlines.html" class="button-link">Airlines</a>
+            <a href="food.html" class="button-link">Food</a>
+            <a href="class.html" class="button-link">Class</a>
+            <a href="route.html" class="button-link">Routes</a>
+            <a href="#" class="button-link">Registered Users</a>
+            <a href="#" class="button-link">Booked Flights</a>
+        </div>
+    </div>
+</body>
+</html>

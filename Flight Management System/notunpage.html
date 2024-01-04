@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Insertion Form</title>
+    <link rel="stylesheet" href="notunpagecss.css">
+</head>
+<body>
+    <!-- Include the navigation bar from topbar.php -->
+    <?php include 'topbar.php'; ?>
+
+    <section class="prothom">
+        <div class="container">
+            <form class="form-group" action="notunpage.php" method="post">
+                <h1 class="text-center">Flight Insertion(Manager)</h1>
+
+                <div class="form-section">
+                    <h3 class="section-title">Flight Details</h3>
+
+                    <div class="input-group">
+                        <label for="origin" class="input-label">Origin:</label>
+                        <select id="origin" class="input-field" name="origin">
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Sirajgonj">Sirajgonj</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="destination" class="input-label">Destination:</label>
+                        <select id="destination" class="input-field" name="destination">
+                            <option value="Dhaka">Dhaka</option>
+                            <option value="Chittagong">Chittagong</option>
+                            <option value="Sirajgonj">Sirajgonj</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="date" class="input-label">Date:</label>
+                        <input type="date" id="date" class="input-field" name="date">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="flight_name" class="input-label">Flight Name:</label>
+                        <select id="flight_name" class="input-field" name="flight_name">
+                            <option value="US Bangla">US Bangla</option>
+                            <option value="Biman Bangladesh">Biman Bangladesh</option>
+                            <option value="Novoair">Novoair</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="price" class="input-label">Price:</label>
+                        <input type="number" id="price" class="input-field" placeholder="Price" name="price">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="flight_id" class="input-label">Flight ID:</label>
+                        <input type="text" id="flight_id" class="input-field" placeholder="Flight ID" name="flight_id">
+                    </div>
+
+                    <button type="submit" class="btn-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
